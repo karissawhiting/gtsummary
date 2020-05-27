@@ -104,7 +104,7 @@ personal style." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gtsummary</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">1.3.0.9011</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">1.3.0.9016</span>
       </span>
     </div>
 
@@ -195,61 +195,21 @@ personal style.</p>
 
     <pre class="usage"><span class='fu'>set_gtsummary_theme</span>(<span class='no'>x</span>)
 
-<span class='fu'>reset_gtsummary_theme</span>()
-
-<span class='fu'>theme_gtsummary_journal</span>(<span class='kw'>journal</span> <span class='kw'>=</span> <span class='st'>"jama"</span>)
-
-<span class='fu'>theme_gtsummary_compact</span>()
-
-<span class='fu'>theme_gtsummary_printer</span>(
-  <span class='kw'>print_engine</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"gt"</span>, <span class='st'>"kable"</span>, <span class='st'>"kable_extra"</span>, <span class='st'>"flextable"</span>, <span class='st'>"huxtable"</span>, <span class='st'>"tibble"</span>)
-)</pre>
+<span class='fu'>reset_gtsummary_theme</span>()</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>A gtsummary theme function, e.g. <code>theme_gtsummary_journal()</code>, or a
+      <td><p>A gtsummary theme function, e.g. <code><a href='theme_gtsummary.html'>theme_gtsummary_journal()</a></code>, or a
 named list defining a gtsummary theme. See details below.</p></td>
-    </tr>
-    <tr>
-      <th>journal</th>
-      <td><p>String indicating the journal theme to follow.</p><ul>
-<li><p><code>"jama"</code> Journal of the American Medical Association</p></li>
-</ul></td>
-    </tr>
-    <tr>
-      <th>print_engine</th>
-      <td><p>String indicating the print engine. Default is <code>"gt"</code></p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="themes"><a class="anchor" href="#themes"></a>Themes</h2>
 
     
-
-<ul>
-<li><p><code>theme_gtsummary_journal(journal=)</code></p><ul>
-<li><p><code>journal = "jama"</code></p><ul>
-<li><p>sets theme to align with the JAMA reporting guidelines</p></li>
-<li><p>large p-values are rounded to two decimal places</p></li>
-<li><p>in <code><a href='tbl_summary.html'>tbl_summary()</a></code> the IQR is separated with a dash, rather than comma</p></li>
-<li><p>in <code><a href='tbl_summary.html'>tbl_summary()</a></code> the percent symbol is not printed next to percentages</p></li>
-</ul></li>
-</ul></li>
-<li><p><code>theme_gtsummary_compact()</code></p><ul>
-<li><p>tables printed with gt, flextable, and huxtable will be compact with smaller font size and reduced cell padding</p></li>
-</ul></li>
-<li><p><code>theme_gtsummary_printer(print_engine=)</code></p><ul>
-<li><p><code>print_engine = "gt"</code> sets the gt package as the default print engine</p></li>
-<li><p><code>print_engine = "kable"</code> sets the <code><a href='https://rdrr.io/pkg/knitr/man/kable.html'>knitr::kable()</a></code> function as the default print engine</p></li>
-<li><p><code>print_engine = "flextable"</code> sets the flextable package as the default print engine</p></li>
-<li><p><code>print_engine = "kable_extra"</code> sets the kableExtra package as the default print engine</p></li>
-<li><p><code>print_engine = "huxtable"</code> sets the huxtable package as the default print engine
-Use <code>reset_gtsummary_theme()</code> to restore the default settings</p></li>
-</ul></li>
-</ul>
 
 <p>Review the <a href='http://www.danieldsjoberg.com/gtsummary/dev/articles/rmarkdown.html'>themes vignette</a>
 to create your own themes.</p>
@@ -259,11 +219,14 @@ to create your own themes.</p>
 
 <p>Example</p>
 <p><img src='figures/set_gtsummary_theme_ex1.png' width=70% /></p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Available <a href='theme_gtsummary.html'>gtsummary themes</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Setting JAMA theme for gtsummary</span>
-<span class='fu'>set_gtsummary_theme</span>(<span class='fu'>theme_gtsummary_journal</span>(<span class='st'>"jama"</span>))</div><div class='output co'>#&gt; <span class='message'>Setting `JAMA` theme</span></div><div class='input'><span class='co'># Themes can be combined by including more than one</span>
-<span class='fu'>set_gtsummary_theme</span>(<span class='fu'>theme_gtsummary_compact</span>())</div><div class='output co'>#&gt; <span class='message'>Setting `Compact` theme</span></div><div class='input'>
+<span class='fu'>set_gtsummary_theme</span>(<span class='fu'><a href='theme_gtsummary.html'>theme_gtsummary_journal</a></span>(<span class='st'>"jama"</span>))</div><div class='output co'>#&gt; <span class='message'>Setting `JAMA` theme</span></div><div class='input'><span class='co'># Themes can be combined by including more than one</span>
+<span class='fu'>set_gtsummary_theme</span>(<span class='fu'><a href='theme_gtsummary.html'>theme_gtsummary_compact</a></span>())</div><div class='output co'>#&gt; <span class='message'>Setting `Compact` theme</span></div><div class='input'>
 <span class='no'>set_gtsummary_theme_ex1</span> <span class='kw'>&lt;-</span>
   <span class='no'>trial</span> <span class='kw'>%&gt;%</span>
   <span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span>(<span class='no'>age</span>, <span class='no'>grade</span>, <span class='no'>trt</span>) <span class='kw'>%&gt;%</span>
